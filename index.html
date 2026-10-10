@@ -61,8 +61,15 @@
   .hero .names .amp{font-family:'Great Vibes',cursive;text-transform:none;color:var(--gold-soft);font-size:1.35em;padding:0 .2em;letter-spacing:0}
   .hero .date{font-family:'Cormorant Garamond',serif;font-size:clamp(.95rem,3.8vw,1.35rem);letter-spacing:.24em;text-transform:uppercase;margin-top:.5rem}
   .hero .place{font-size:clamp(.55rem,2vw,.7rem);letter-spacing:.3em;text-transform:uppercase;opacity:.9;margin-top:.2rem}
-  .next{display:inline-block;margin-top:clamp(1rem,3vh,1.6rem);color:#fff;text-decoration:none;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;opacity:.85}
-  .next::after{content:"";display:block;width:1px;height:24px;margin:6px auto 0;background:#fff;animation:pulse 1.8s infinite}
+  .next{display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;margin-top:clamp(1.1rem,3.2vh,1.8rem);color:#fff;text-decoration:none}
+  .next .pill{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.5rem .75rem 1.7rem;border-radius:999px;border:1px solid rgba(255,255,255,.75);
+    background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:clamp(.66rem,2.4vw,.78rem);font-weight:600;
+    letter-spacing:.28em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:background .3s,transform .3s}
+  .next:hover .pill{background:rgba(255,255,255,.28);transform:translateY(-2px)}
+  .next .chev{width:15px;height:15px;border-right:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(45deg);margin-top:-4px;animation:nudge 1.6s ease-in-out infinite}
+  .next .chevs{display:flex;flex-direction:column;align-items:center;height:34px}
+  .next .chevs .chev:nth-child(2){animation-delay:.2s;opacity:.6}
+  @keyframes nudge{0%,100%{transform:translateY(0) rotate(45deg);opacity:1}50%{transform:translateY(6px) rotate(45deg);opacity:.4}}
 
   /* ---------- Page 2 · Invitation ---------- */
   .invite{background:linear-gradient(160deg,#fff7f3 0%,#fbe9ea 50%,#f6e0e6 100%);text-align:center;min-height:auto;padding-top:clamp(2.6rem,7vh,4.5rem);padding-bottom:.6rem}
@@ -199,7 +206,7 @@
       <div class="names">Dileep Chand <span class="amp">&amp;</span> Anitha</div>
       <div class="date">Thursday · 15 October 2026</div>
       <div class="place">Narisetti Kalyana Mandapam · Macherla</div>
-      <a class="next" href="#invitation">Scroll down</a>
+      <a class="next" href="#invitation" aria-label="Scroll down to the invitation"><span class="pill">Scroll down</span><span class="chevs"><i class="chev"></i><i class="chev"></i></span></a>
     </div>
   </div>
 </header>
